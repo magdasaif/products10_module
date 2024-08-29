@@ -72,11 +72,11 @@ class Products10ServiceProvider extends ServiceProvider
     {
         $this->publishes([
             // $this->module_path($this->moduleName, 'Config/config.php') => config_path($this->moduleNameLower . '.php'),
-            dirname(__DIR__).'Config/config.php' => config_path($this->moduleNameLower . '.php'),
+            dirname(__DIR__).'/Config/config.php' => config_path($this->moduleNameLower . '.php'),
         ], 'config');
         $this->mergeConfigFrom(
             // $this->module_path($this->moduleName, 'Config/config.php'), $this->moduleNameLower
-            dirname(__DIR__).'Config/config.php', $this->moduleNameLower
+            dirname(__DIR__).'/Config/config.php', $this->moduleNameLower
         );
     }
 
