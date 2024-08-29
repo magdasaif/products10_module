@@ -1,0 +1,36 @@
+{
+    "name": "magdasaif/products10_module",
+    "description": "this is a product package based on hmvc module version 10",
+    "type":"library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "magdasaif",
+            "email": "magdasaif3@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Products10\\Providers\\Products10ServiceProvider",
+                "Modules\\Products10\\Providers\\RouteServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Products10\\": "",
+            "Modules\\Products10\\Database\\Factories\\": "Database/Factories/",
+            "Modules\\Products10\\Database\\Seeders\\": "Database/Seeders/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^8.2",
+        "nwidart/laravel-modules": "*"
+    }
+}
