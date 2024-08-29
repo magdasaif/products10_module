@@ -26,10 +26,22 @@ class Products10ServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->registerCommands();
         $this->registerTranslations();
         $this->registerConfig();
         $this->registerViews();
         $this->loadMigrationsFrom($this->module_path($this->moduleName, 'Database/Migrations'));
+        //==============================================================================================
+        // publish all package folder
+        $this->publishes([
+            dirname(__DIR__) .'/..' => base_path('Modules/Products10')        
+        ], 'products10-module');
+        //==============================================================================================
+        // publish config
+        $this->publishes([
+            dirname(__DIR__) .'/../config/config.php' => config_path('products10.php'),
+        ], 'products10-config');
+        //==============================================================================================
     }
 
     /**
@@ -41,7 +53,16 @@ class Products10ServiceProvider extends ServiceProvider
     {
         $this->app->register(RouteServiceProvider::class);
     }
-
+    //===================================================================================
+    /**
+     * Register commands in the format of Command::class
+     */
+    protected function registerCommands(): void{
+        $this->commands([
+            \Modules\Products10\Console\PublishModuleCommand::class,
+        ]);
+    }
+    //===================================================================================
     /**
      * Register config.
      *
