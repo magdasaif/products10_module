@@ -4,7 +4,7 @@ namespace Modules\Products10\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
-use Modules\Product10\Http\Traits\Configuration;
+use Modules\Products10\Http\Traits\Configuration;
 
 class Products10ServiceProvider extends ServiceProvider
 {
