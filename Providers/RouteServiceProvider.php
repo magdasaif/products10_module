@@ -52,7 +52,7 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web')
             ->namespace($this->moduleNamespace)
             // ->group($this->module_path('Products10', '/Routes/web.php'));
-            ->group(dirname(__DIR__).'/../Routes/web.php');
+            ->group(dirname(__DIR__).'/Routes/web.php');
     }
 
     /**
@@ -68,6 +68,6 @@ class RouteServiceProvider extends ServiceProvider
             ->middleware('api')
             ->namespace($this->moduleNamespace)
             // ->group($this->module_path('Products10', '/Routes/api.php'));
-            ->group(dirname(__DIR__).'/../Routes/api.php');
+            ->group(dirname(__DIR__).'/Routes/api.php');
     }
 }
