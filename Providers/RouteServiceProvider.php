@@ -4,9 +4,11 @@ namespace Modules\Products10\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Modules\Product10\Http\Traits\Configuration;
 
 class RouteServiceProvider extends ServiceProvider
 {
+    use Configuration;
     /**
      * The module namespace to assume when generating URLs to actions.
      *
@@ -49,7 +51,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::middleware('web')
             ->namespace($this->moduleNamespace)
-            ->group(module_path('Products10', '/Routes/web.php'));
+            ->group($this->module_path('Products10', '/Routes/web.php'));
     }
 
     /**
@@ -64,6 +66,6 @@ class RouteServiceProvider extends ServiceProvider
         Route::prefix('api')
             ->middleware('api')
             ->namespace($this->moduleNamespace)
-            ->group(module_path('Products10', '/Routes/api.php'));
+            ->group($this->module_path('Products10', '/Routes/api.php'));
     }
 }
